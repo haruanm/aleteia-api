@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <haruanm@gmail.com>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-19 10:48-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: core/admin.py:49
+msgid "Set selected news as Fake"
+msgstr "Classifica notícias selecionadas como falsas"
+
+#: core/admin.py:50
+msgid "Set selected news as True"
+msgstr "Classifica notícias selected core verdadeiras"
+
+#: core/models.py:10
+msgid "created_at"
+msgstr "criado em"
+
+#: core/models.py:11
+msgid "updated_at"
+msgstr "alterado em"
+
+#: core/models.py:21
+msgid "date"
+msgstr "data"
+
+#: core/models.py:22
+msgid "title"
+msgstr "titulo"
+
+#: core/models.py:23 core/models.py:39
+msgid "text"
+msgstr "texto"
+
+#: core/models.py:24 core/models.py:41
+msgid "url"
+msgstr "url"
+
+#: core/models.py:25
+msgid "is fake?"
+msgstr "é fake?"
+
+#: core/models.py:26
+msgid "classified at"
+msgstr "classificado em"
+
+#: core/models.py:32 core/models.py:33
+msgid "news"
+msgstr "notícia"
+
+#: core/models.py:37
+msgid "ipv4"
+msgstr "ipv4"
+
+#: core/models.py:38
+msgid "ipv6"
+msgstr "ipv6"
+
+#: core/models.py:40
+msgid "text_date"
+msgstr "data do texto"
+
+#: core/models.py:42
+msgid "response"
+msgstr "resposta"
+
+#: core/models.py:45
+msgid "classification request"
+msgstr "requisição de classificação"
+
+#: core/models.py:46
+msgid "classification requests"
+msgstr "requisições de classificação"

@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+  "name": "Aleteia",
+  "description": "Sistema de Inteligencia Artifical para checagem de Fake News",
+  "version": "1.00",
+  "icons": {
+    "128": "images/aleteia128.png",
+    "48": "images/aleteia48.png",
+    "32":"images/aleteia32.png" ,
+    "16": "images/aleteia16.png"
+  },
+  "browser_action": {
+    "default_icon": "images/aleteia16.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "storage",
+    "notifications",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": [
+      "jQuery.js",
+      "eventPage.js",
+      "core.js"
+    ],
+    "web_accessible_resources": [
+      "style.css"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "jQuery.js",
+        "eventPage.js",
+        "core.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

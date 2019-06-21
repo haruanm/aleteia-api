@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aleteia - Sistema de combate a fake news</title>
+    <script src="jQuery.js">        </script>
+    <script src="core.js"></script>
+    <script src="popup.js">        </script>
+    <style>
+        body {
+            margin-top: -2em;
+            padding: 10px;
+            min-width: 400px;
+            min-height: max-content;
+            font-size: 15px;
+        }
+
+        img {
+            max-width: 400px;
+        }
+        
+        .botao {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            margin-left: -1.5em;
+        }
+
+        #sendNew{
+            color: rgb(255, 255, 255);
+            border-style: hidden;
+            padding: 5px;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(28, 184, 65);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>      
+            <img id="comousar" src="images/como_usar.jpg" alt="como usar?"/>    
+    </h1>
+    <div class="container">
+    <ol>
+        <li>Selecione o texto da notícia, incluindo o título.</li>
+        <li>Clique com o botão direito do mouse em cima da seleção.</li>
+        <li>Clique no ícone " <img src="images/aleteia16.png" alt="Aleteia Icon" height="16" width="16"> " da extensão
+            Aleteia ou clique no botão abaixo</li>
+    </ol>
+    <div class="botao">
+    <button id="sendNew"> Enviar Notícia </button>
+</div>
+    </div>
+</body>
+
+</html>

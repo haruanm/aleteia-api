@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  db:
+    env_file:
+      - .env
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql/data
+  proxy:
+    build: .docker/multitor
+  web:
+    build: 
+      context: .
+      dockerfile: .docker/python/Dockerfile
+    depends_on:
+      - db
+      - proxy
+    entrypoint: ./entrypoint.dev.sh
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    stdin_open: true
+    tty: true
+    volumes:
+      - ".:/aleteia"
+    working_dir: /aleteia
