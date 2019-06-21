@@ -1,6 +1,14 @@
+import sys, os
+sys.path.append('/aleteia')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'aleteia.settings'
+
+import django
+django.setup()
+
+from core.models import News
+
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-
 
 class DCMSpider(CrawlSpider):
     """ Spyder to crawling news from Diario do Centro do Mundo"""
@@ -22,9 +30,9 @@ class DCMSpider(CrawlSpider):
             new += new_body.get().strip()
 
         if len(new) > 0:
-            yield {
-                'title': response.css('h1.entry-title ::text').get().strip(),
-                'date': response.xpath("//meta[@itemprop='datePublished']/@content")[0].extract(),
-                'text': new,
-                'url': response.url
-            }
+            News.objects.create(
+                title=response.css('h1.entry-title ::text').get().strip(),
+                date=response.xpath("//meta[@itemprop='datePublished']/@content")[0].extract(),
+                text=new,
+                url=response.url
+            )

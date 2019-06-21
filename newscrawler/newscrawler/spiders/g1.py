@@ -1,3 +1,9 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','???.settings')
+
+import django
+django.setup()
+from core.models import News
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
@@ -22,9 +28,9 @@ class G1Spider(CrawlSpider):
             new += new_body.get().strip()
 
         if len(new) > 0:
-            yield {
-                    'url': response.url,
-                    'date': response.xpath("//meta[@itemprop='datePublished']/@content")[0].extract(),
-                    'title': response.css('h1.content-head__title ::text').get().strip(),
-                    'text': new
-                   }
+            News.objects.create(
+                url=response.url,
+                date=response.xpath("//meta[@itemprop='datePublished']/@content")[0].extract(),
+                title=response.css('h1.content-head__title ::text').get().strip(),
+                text=new
+            )

@@ -1,3 +1,10 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','???.settings')
+
+import django
+django.setup()
+
+from core.models import News
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
@@ -22,9 +29,9 @@ class FolhaSpider(CrawlSpider):
             new += new_body.get().strip()
 
         if len(new) > 0:
-            yield {
-                'title': response.css('h1.c-content-head__title ::text').get().strip(),
-                'date': response.xpath("//meta[@property='article:published_time']/@content")[0].extract(),
-                'text': new,
-                'url': response.url
-            }
+            News.objects.create(
+                title=response.css('h1.c-content-head__title ::text').get().strip(),
+                date=response.xpath("//meta[@property='article:published_time']/@content")[0].extract(),
+                text=new,
+                url=response.url
+            )
