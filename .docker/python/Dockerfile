@@ -11,6 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir uwsgi
 
 RUN python manage.py warmup
+RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python3 manage.py shell
 RUN chmod +x /usr/src/app/.docker/python/entrypoint.sh
 
 CMD ["/usr/src/app/.docker/python/entrypoint.sh"]
