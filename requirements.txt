@@ -26,7 +26,7 @@ jsonfield2==3.0.2
 lxml==4.3.4
 MarkupSafe==1.1.1
 mysqlclient==1.4.2.post1
-nltk==3.4.3
+nltk==3.4.5
 numpy==1.16.4
 openapi-codec==1.3.2
 parsel==1.5.1
